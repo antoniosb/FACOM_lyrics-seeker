@@ -14,3 +14,10 @@ Path para as views do admin (CRUD de musicas, etc)
 
 Path para as views do user (pesquisas, resultados, etc)
 	./WebContent/views/user:
+
+Path para os arquivos de CSS:
+	./WebContent/css/
+
+Path para os arquivos de Javascript:
+	./WebContent/javascript
+

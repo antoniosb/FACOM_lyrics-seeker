@@ -4,14 +4,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <link rel="stylesheet" type="text/css" href="./css/style.css">
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="Controller" method="GET">
-		Input an integer: <input type="text" name="value"> <br> <input
+	<form id='form' action="Controller" method="GET">
+		Input an integer: <input id="value" type="text" name="value"> <br> <input
 			type="radio" name="method" value="square" checked> Square <br>
 		<input type="radio" name="method" value="factorial"> Factorial<br>
 		<input type="submit" value="Calculate">
 	</form>
+<script type="text/javascript" src="./javascript/script.js"></script>	
 </body>
 </html>
