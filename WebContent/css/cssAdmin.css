@@ -1,0 +1,86 @@
+body{
+	font-family:arial;
+}
+
+.menuAdmin{
+	float:left;
+	margin-top: 0px;
+}
+
+.formMusica{
+	margin-top: 28px;
+	margin-left: 154px;
+	float:left;
+}
+
+.formArtista{
+	margin-top: 28px;
+	margin-left: 154px;
+	float:left;
+}
+
+.formGenero{
+	margin-top: 28px;
+	margin-left: 154px;
+	float:left;
+}
+
+.btnadd{
+	float:left;
+	margin-top:30px;
+	margin-left:120px;
+}
+
+.campoBusca{
+	float:right;
+	margin-right:25px;
+	margin-top:30px;
+}
+
+.areaExclusiva{
+	text-align:center;
+	background: black;
+	color:white;
+	padding: 6px;
+}
+
+.loginAdmin{
+	text-align:center;
+	margin-top:139px;
+}
+
+.btnLoginAdmin{
+	text-align:center;
+	margin-left:169px;
+	margin-top: 12px;
+}
+
+#menu ul {
+	padding:0px;
+	margin:0px;
+	background-color:#4b4848;
+	list-style:none;
+}
+
+#menu ul li { display: inline; 
+			}
+
+#menu ul li a {
+	padding: 10px 128px;
+	display: inline-block;
+ 
+	/* visual do link */
+	background-color:#4b4848;
+	color: #fff;
+	text-decoration: none;
+	font-family:arial;
+	font-size: 20px;
+	border-bottom:3px solid #4b4848;
+}
+
+#menu ul li a:hover {
+	background-color:rgb(207, 206, 206);
+	color: #4b4848;
+	border-bottom:3px solid #4b4848;
+	border-top:3px solid #4b4848;
+}
