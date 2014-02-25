@@ -2,26 +2,26 @@ package br.facom.lyricsseeker.DBConnection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
 public class SQLiteConnection {
-	private static Connection conn;
 
 	private SQLiteConnection() {
 	}
 
 	public static Connection getInstance() {
-
-		if (conn == null) {
-			try {
-				Class.forName("org.sqlite.JDBC");
-				conn = DriverManager.getConnection("jdbc:sqlite:./db/lyricsDB");
-			} catch (Exception e) {
-				System.err.println(e.getClass().getName() + ": "
-						+ e.getMessage());
-			}
+		Connection conn = null;
+		try {
+			Class.forName("org.sqlite.JDBC");
+			
+//		    URL location = SQLiteConnection.class.getProtectionDomain().getCodeSource().getLocation();
+//	        System.out.println(location.getFile());
+	        
+			//conn = DriverManager.getConnection("jdbc:sqlite:./db/lyricsDB");
+			conn = DriverManager.getConnection("jdbc:sqlite:Projects/lyrics-seeker/db/lyricsDB");
+		} catch (Exception e) {
+			System.err.println(e.getClass().getName() + ": " + e.getMessage());
 		}
 		return conn;
 	}
@@ -99,6 +99,5 @@ public class SQLiteConnection {
 			}
 		}
 	}
-	
 
 }

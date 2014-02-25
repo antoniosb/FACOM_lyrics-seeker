@@ -1,18 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
-  <display-name>lyrics-seeker</display-name>
-  <welcome-file-list>
-    <welcome-file>/views/index.jsp</welcome-file>
-  </welcome-file-list>
-  
-  <servlet>
-    <servlet-name>adminIndex</servlet-name>
-    <jsp-file>/views/admin/indexAdmin.jsp</jsp-file>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>adminIndex</servlet-name>
-    <url-pattern>/admin</url-pattern>
-  </servlet-mapping>
-  
-  
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>lyrics-seeker</display-name>
+
+
+	<welcome-file-list>
+		<welcome-file>/views/index.jsp</welcome-file>
+	</welcome-file-list>
+
+
+	<servlet>
+		<servlet-name>adminIndex</servlet-name>
+		<jsp-file>/views/admin/indexAdmin.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>adminIndex</servlet-name>
+		<url-pattern>/admin</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>adminEditMusica</servlet-name>
+		<jsp-file>/views/admin/Admin-editMusica.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>adminEditMusica</servlet-name>
+		<url-pattern>/editMusica</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>adminEditArtista</servlet-name>
+		<jsp-file>/views/admin/Admin-editArtista.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>adminEditArtista</servlet-name>
+		<url-pattern>/editArtista</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>adminEditGenero</servlet-name>
+		<servlet-class>br.facom.lyricsseeker.controllers.AdminEditGeneroController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>adminEditGenero</servlet-name>
+		<url-pattern>/editGenero</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>adminAddMusica</servlet-name>
+		<jsp-file>/views/admin/Admin-addMusica.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>adminAddMusica</servlet-name>
+		<url-pattern>/addMusica</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>adminAddArtista</servlet-name>
+		<jsp-file>/views/admin/Admin-addArtista.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>adminAddArtista</servlet-name>
+		<url-pattern>/addArtista</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>adminAddGenero</servlet-name>
+		<jsp-file>/views/admin/Admin-addGenero.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>adminAddGenero</servlet-name>
+		<url-pattern>/addGenero</url-pattern>
+	</servlet-mapping>
+
+
 </web-app>
