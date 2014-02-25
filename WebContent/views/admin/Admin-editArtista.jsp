@@ -12,7 +12,6 @@
 <head>
 <link rel="stylesheet" type="text/css" href="./css/cssAdmin.css">
 <title>Editar Artista</title>
-<!--<link rel="shortcut icon" href="http://www.achetudoeregiao.com.br/mg/iturama/gifs/Brasaoiturama.jpg">-->
 <meta charset="utf-8">
 <meta name="description" content="Editar Artista">
 <meta name="keywords" content="Editar Artista">

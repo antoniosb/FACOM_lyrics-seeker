@@ -55,7 +55,7 @@
 				<p>ID: <input type="text" readonly name="id_artista" value="<%= id_artista %>"style="width:295px; font-family:arial"></p>
 				
 				<p>ID Genero: <input type="text" readonly value="<%= id_genero %>"style="width:295px; font-family:arial"></p>
-				
+				Genero: 
 				<select name="id_genero" >
 					<%for(Genero each: generos){ 
 						if(each.getId()== id_genero){

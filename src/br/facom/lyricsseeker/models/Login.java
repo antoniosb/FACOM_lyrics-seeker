@@ -1,9 +1,5 @@
 package br.facom.lyricsseeker.models;
 
-import java.util.List;
-
-import br.facom.lyricsseeker.DAO.LoginDAO;
-
 public class Login {
 	
 	String usuario;

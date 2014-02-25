@@ -41,6 +41,15 @@
 		<url-pattern>/editArtista</url-pattern>
 	</servlet-mapping>
 
+<!--  MUSICA -->
+	<servlet>
+		<servlet-name>adminEditMusica</servlet-name>
+		<servlet-class>br.facom.lyricsseeker.controllers.AdminEditMusicaController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>adminEditMusica</servlet-name>
+		<url-pattern>/editMusica</url-pattern>
+	</servlet-mapping>
 
 
 

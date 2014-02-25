@@ -166,4 +166,31 @@ public class ArtistaDAO {
 		}
 		return result;
 	}
+	
+	public static Artista getOneById(int id){
+		Artista result = null;
+		try{
+			Statement stmt = CONN.createStatement();
+			String query = String.format(SELECT_ONE_QUERY, id);
+
+			ResultSet rs = stmt.executeQuery(query);
+			while (rs.next()) {
+				result = new Artista();
+				result.setIdArtista(rs.getInt("id_artista"));
+				result.setNomeArtista(rs.getString("nome_artista"));
+				result.setIdGenero(rs.getInt("id_genero"));
+				result.setUrlFoto(rs.getString("url_foto"));
+				result.setBiografia(rs.getString("biografia"));
+				try{
+					result.setDataNascimento(PATTERN.parse(rs.getString("data_nascimento")));
+				}catch(ParseException e){
+					result.setDataNascimento(new Date());
+				}
+			}
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
 }
