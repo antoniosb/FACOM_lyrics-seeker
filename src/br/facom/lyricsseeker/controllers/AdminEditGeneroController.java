@@ -14,8 +14,8 @@ import br.facom.lyricsseeker.DAO.GeneroDAO;
 import br.facom.lyricsseeker.models.Genero;
 
 /**
- * Servlet implementation class AdminEditGeneroController
- */
+* Servlet implementation class AdminEditGeneroController
+*/
 @WebServlet("/AdminEditGeneroController")
 public class AdminEditGeneroController extends HttpServlet {
 	private static final long serialVersionUID = 1L;

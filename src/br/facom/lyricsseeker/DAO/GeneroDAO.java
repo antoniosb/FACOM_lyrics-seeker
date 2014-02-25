@@ -14,12 +14,13 @@ public class GeneroDAO {
 
 	private static final Connection CONN = SQLiteConnection.getInstance();
 	private static final String SELECT_ALL_QUERY = "SELECT * FROM GENERO";
-	private static final String INSERT_QUERY = "INSERT INTO GENERO VALUES('%s' ,'%s');";
+	private static final String INSERT_QUERY = "INSERT INTO GENERO VALUES(null, '%s' ,'%s');";
 	private static final String UPDATE_QUERY = "UPDATE GENERO SET nome_genero = '%s' , " +
 			"descricao= '%s' WHERE nome_genero = '%s' ;";
 	private static final String DELETE_QUERY = "DELETE FROM GENERO WHERE nome_genero = '%s' ;";
 	private static final String SELECT_ONE_QUERY = "SELECT * FROM GENERO WHERE nome_genero= '%s' LIMIT 1";
 	private static final String SELECT_SOME_QUERY = "SELECT * FROM GENERO WHERE lower(nome_genero) like '%%%s%%';";
+	private static final String SELECT_BY_ID = "SELECT * FROM GENERO WHERE id_genero= %d";
 
 	public List<Genero> getAll() {
 		List<Genero> result = new LinkedList<Genero>();
@@ -30,6 +31,7 @@ public class GeneroDAO {
 				Genero each = new Genero();
 				each.setNomeGenero(rs.getString("nome_genero"));
 				each.setDescricao(rs.getString("descricao"));
+				each.setId(rs.getInt("id_genero"));
 				result.add(each);
 			}
 			stmt.close();
@@ -116,6 +118,7 @@ public class GeneroDAO {
 	}
 	
 	public List<Genero> getSome(String nome){
+
 		List<Genero> result = new LinkedList<Genero>();
 		try {
 			Statement stmt = CONN.createStatement();
@@ -130,6 +133,23 @@ public class GeneroDAO {
 			}
 			stmt.close();
 		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
+	public static Genero getOneById(int id){
+		Genero result = new Genero();
+		try{
+			Statement stmt = CONN.createStatement();
+			String query = String.format(SELECT_BY_ID, id);
+
+			ResultSet rs = stmt.executeQuery(query);
+			while (rs.next()) {
+				result.setNomeGenero(rs.getString("nome_genero"));
+				result.setDescricao(rs.getString("descricao"));
+			}
+		}catch(SQLException e){
 			e.printStackTrace();
 		}
 		return result;

@@ -6,7 +6,6 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="./css/cssAdmin.css">
 		<title>Adicionar GÃªnero</title>
-		<!--<link rel="shortcut icon" href="http://www.achetudoeregiao.com.br/mg/iturama/gifs/Brasaoiturama.jpg">-->
 		<meta charset="utf-8">
 		<meta name="description" content="Adicionar Gênero">
 		<meta name="keywords" content="Adicionar Gênero">

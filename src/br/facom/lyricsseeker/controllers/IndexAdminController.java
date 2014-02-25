@@ -17,8 +17,8 @@ import br.facom.lyricsseeker.models.Genero;
 import br.facom.lyricsseeker.models.Login;
 
 /**
- * Servlet implementation class IndexAdminController
- */
+* Servlet implementation class IndexAdminController
+*/
 @WebServlet("/IndexAdminController")
 public class IndexAdminController extends HttpServlet {
 	private static final long serialVersionUID = 1L;

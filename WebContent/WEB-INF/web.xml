@@ -20,27 +20,7 @@
 		<url-pattern>/admin</url-pattern>
 	</servlet-mapping>
 
-
-	<servlet>
-		<servlet-name>adminEditMusica</servlet-name>
-		<jsp-file>/views/admin/Admin-editMusica.jsp</jsp-file>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>adminEditMusica</servlet-name>
-		<url-pattern>/editMusica</url-pattern>
-	</servlet-mapping>
-
-
-	<servlet>
-		<servlet-name>adminEditArtista</servlet-name>
-		<jsp-file>/views/admin/Admin-editArtista.jsp</jsp-file>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>adminEditArtista</servlet-name>
-		<url-pattern>/editArtista</url-pattern>
-	</servlet-mapping>
-
-
+<!-- GENERO  -->
 	<servlet>
 		<servlet-name>adminEditGenero</servlet-name>
 		<servlet-class>br.facom.lyricsseeker.controllers.AdminEditGeneroController</servlet-class>
@@ -51,34 +31,18 @@
 	</servlet-mapping>
 
 
+<!--  ARTISTA -->
 	<servlet>
-		<servlet-name>adminAddMusica</servlet-name>
-		<jsp-file>/views/admin/Admin-addMusica.jsp</jsp-file>
+		<servlet-name>adminEditArtista</servlet-name>
+		<servlet-class>br.facom.lyricsseeker.controllers.AdminEditArtistaController</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>adminAddMusica</servlet-name>
-		<url-pattern>/addMusica</url-pattern>
+		<servlet-name>adminEditArtista</servlet-name>
+		<url-pattern>/editArtista</url-pattern>
 	</servlet-mapping>
 
 
-	<servlet>
-		<servlet-name>adminAddArtista</servlet-name>
-		<jsp-file>/views/admin/Admin-addArtista.jsp</jsp-file>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>adminAddArtista</servlet-name>
-		<url-pattern>/addArtista</url-pattern>
-	</servlet-mapping>
 
-
-	<servlet>
-		<servlet-name>adminAddGenero</servlet-name>
-		<jsp-file>/views/admin/Admin-addGenero.jsp</jsp-file>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>adminAddGenero</servlet-name>
-		<url-pattern>/addGenero</url-pattern>
-	</servlet-mapping>
 
 
 </web-app>

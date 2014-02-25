@@ -29,9 +29,6 @@
 	<br>
 	<br>
 	<div class="btnadd">
-<!-- 		<form method="POST" action="Admin-addGenero.jsp"> -->
-<!-- 			<input type="submit" value="Adicionar Gênero"> -->
-<!-- 		</form> -->
 		<a href="editGenero?action=add"> Adicionar Gênero</a>
 	</div>
 	<!--btnaddMusica-->
@@ -50,9 +47,12 @@
 		%>
 		<%
 			for (Genero each : generos) {
+				
 		%>
 		<div class="genero-item">
 			<ul>
+				<li>ID: <%= each.getId() %>
+				</li>
 				<li>Nome: <%=each.getNomeGenero()%>
 				</li>
 				<li>Descrição: <%=each.getDescricao()%>
@@ -67,10 +67,6 @@
 		%>
 
 	</div>
-
-
-
-
 
 </body>
 </html>

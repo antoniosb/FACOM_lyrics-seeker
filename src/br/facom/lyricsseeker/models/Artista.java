@@ -2,25 +2,27 @@ package br.facom.lyricsseeker.models;
 
 import java.util.Date;
 
-public class Musico {
+public class Artista {
 
-	int idMusico;
-	String nomeMusico;
+	int idArtista;
+	String nomeArtista;
 	Date dataNascimento;
-	String nomeGenero;
+	int idGenero;
 	String urlFoto;
 	String biografia;
-	public int getIdMusico() {
-		return idMusico;
+	
+	
+	public int getIdArtista() {
+		return idArtista;
 	}
-	public void setIdMusico(int idMusico) {
-		this.idMusico = idMusico;
+	public void setIdArtista(int idArtista) {
+		this.idArtista = idArtista;
 	}
-	public String getNomeMusico() {
-		return nomeMusico;
+	public String getNomeArtista() {
+		return nomeArtista;
 	}
-	public void setNomeMusico(String nomeMusico) {
-		this.nomeMusico = nomeMusico;
+	public void setNomeArtista(String nomeArtista) {
+		this.nomeArtista = nomeArtista;
 	}
 	public Date getDataNascimento() {
 		return dataNascimento;
@@ -28,11 +30,11 @@ public class Musico {
 	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
-	public String getNomeGenero() {
-		return nomeGenero;
+	public int getIdGenero() {
+		return idGenero;
 	}
-	public void setNomeGenero(String nomeGenero) {
-		this.nomeGenero = nomeGenero;
+	public void setIdGenero(int idGenero) {
+		this.idGenero = idGenero;
 	}
 	public String getUrlFoto() {
 		return urlFoto;
@@ -46,6 +48,8 @@ public class Musico {
 	public void setBiografia(String biografia) {
 		this.biografia = biografia;
 	}
+	
+	
 	
 	
 }
