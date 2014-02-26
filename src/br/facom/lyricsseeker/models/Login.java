@@ -25,5 +25,9 @@ public class Login {
 		this.senha = senha;
 	}
 	
+	@Override
+	public String toString(){
+		return "Login = {usuario: "+getUsuario()+", senha: "+getSenha()+", is_auth: "+isAuth()+"}";
+	}
 	
 }

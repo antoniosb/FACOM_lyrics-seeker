@@ -27,6 +27,7 @@ public class MusicaDAO {
 	private static final String DELETE_QUERY = "DELETE FROM MUSICA WHERE id_musica =%d ;";
 	private static final String SELECT_ONE_QUERY = "SELECT * FROM MUSICA WHERE id_musica= %d LIMIT 1";
 	private static final String SELECT_NAME_QUERY = "SELECT * FROM MUSICA WHERE lower(nome_musica) like '%%%s%%';";
+	private static final String SELECT_LETRA_QUERY = "SELECT * FROM MUSICA WHERE lower(letra) like '%%%s%%';";
 
 	public static final DateFormat PATTERN = new SimpleDateFormat(
 			"YYYY-MM-DD HH:MM:SS.SSS");
@@ -201,4 +202,56 @@ public class MusicaDAO {
 		}
 		return video_id;
 	}
+
+	
+	
+	public Musica getOneNameLike(String termoBusca) {
+		Musica result = null;
+		if(getSome(termoBusca).size() > 0)
+			result = getSome(termoBusca).get(0);
+		
+		return result;
+	}
+
+	public List<Musica> getSomeByLyrics(String trecho){
+		List<Musica> result = new LinkedList<Musica>();
+		try {
+			Statement stmt = CONN.createStatement();
+			String query = String.format(SELECT_LETRA_QUERY, trecho.toLowerCase());
+
+			ResultSet rs = stmt.executeQuery(query);
+			while (rs.next()) {
+				Musica each = new Musica();
+
+				each.setIdMusica(rs.getInt("id_musica"));
+				each.setNomeMusica(rs.getString("nome_musica"));
+				each.setIdArtista(rs.getInt("id_artista"));
+				each.setIdGenero(rs.getInt("id_genero"));
+				each.setUrlVideo(rs.getString("url_video"));
+				each.setLetra(rs.getString("letra"));
+
+				try {
+					each.setDataCriacao(PATTERN.parse(rs
+							.getString("data_criacao")));
+				} catch (ParseException e) {
+					each.setDataCriacao(new Date());
+				}
+				result.add(each);
+			}
+			stmt.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+
+	public Musica getOneByLyrics(String termoBusca) {
+		Musica result = null;
+		
+		if (getSomeByLyrics(termoBusca).size() > 0)
+			result = getSomeByLyrics(termoBusca).get(0);
+		
+		return result;
+	}
+
 }

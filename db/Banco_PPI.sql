@@ -3,32 +3,41 @@ CREATE TABLE login(
 	senha CHAR(20)	
 );
 
-CREATE TABLE musico (
-	id_musico CHAR(20) PRIMARY KEY NOT NULL,
-	nome_musico CHAR(20),
-	data_nascimento CHAR(60),
-	nome_genero CHAR(20),
-	fotos CHAR(200),
-	biografia CHAR(512),
-	FOREIGN KEY (nome_genero) REFERENCES genero(nome_genero)
-);
-
-CREATE TABLE letra (	
-	id_letra CHAR(20) PRIMARY KEY NOT NULL,
-	nome_letra CHAR(20),
-	id_musico CHAR(20),
-	nome_genero CHAR(20),
-	url_video CHAR(50),	
-	data_criacao DATE,
-	texto CHAR(1000),
-	FOREIGN KEY (id_musico) REFERENCES musico(id_musico),
-	FOREIGN KEY (nome_genero) REFERENCES genero(nome_genero)
-);
-
 CREATE TABLE genero (
-	nome_genero CHAR(20) PRIMARY KEY NOT NULL,
+	id_genero INTEGER PRIMARY KEY AUTOINCREMENT,
+	nome_genero CHAR(20) NOT NULL,
 	descricao CHAR(60)
 );
+
+CREATE TABLE artista (
+	id_artista INTEGER PRIMARY KEY AUTOINCREMENT,
+	nome_artista CHAR(20),
+	data_nascimento TEXT,
+	id_genero INTEGER,
+	url_foto CHAR(200),
+	biografia CHAR(512),
+	FOREIGN KEY (id_genero) REFERENCES genero(id_genero)
+);
+
+
+CREATE TABLE musica (	
+	id_musica INTEGER PRIMARY KEY AUTOINCREMENT,
+	nome_musica CHAR(60),
+	id_artista INTEGER,
+	id_genero INTEGER,
+	url_video CHAR(100),	
+	data_criacao TEXT,
+	letra CHAR(1000),
+	FOREIGN KEY (id_artista) REFERENCES artista(id_artista),
+	FOREIGN KEY (id_genero) REFERENCES genero(id_genero)
+);
+
+
+
+
+
+
+
 
 CREATE TABLE acesso_cantor (
 	id_musico CHAR(20),

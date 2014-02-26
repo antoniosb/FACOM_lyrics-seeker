@@ -7,10 +7,11 @@
 
 
 	<welcome-file-list>
-		<welcome-file>/views/index.jsp</welcome-file>
+		<welcome-file>/views/user/indexUsr.jsp</welcome-file>
 	</welcome-file-list>
 
 
+<!--  	ADMIN INDEX -->
 	<servlet>
 		<servlet-name>adminIndex</servlet-name>
 		<jsp-file>/views/admin/indexAdmin.jsp</jsp-file>
@@ -51,6 +52,16 @@
 		<url-pattern>/editMusica</url-pattern>
 	</servlet-mapping>
 
+<!-- USER INDEX -->
+	<servlet>
+		<servlet-name>userIndex</servlet-name>
+		<servlet-class>br.facom.lyricsseeker.controllers.IndexUserController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>userIndex</servlet-name>
+		<url-pattern>/user</url-pattern>
+	</servlet-mapping>
+	
 
 
 

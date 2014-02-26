@@ -56,5 +56,13 @@ public class Musica {
 	public void setLetra(String letra) {
 		this.letra = letra;
 	}
-
+	
+	@Override
+	public String toString(){
+		return "Musica = {id: "+getIdMusica()+", nome: "+getNomeMusica()+", " +
+				"artista: "+getIdArtista()+", genero: "+getIdGenero()+", " +
+				"url_video: "+getUrlVideo()+", data_criacao: "+getDataCriacao().toString()+", " +
+				"letra: "+getLetra()+"}";
+	}
+	
 }

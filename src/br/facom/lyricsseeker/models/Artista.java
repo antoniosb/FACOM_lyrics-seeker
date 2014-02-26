@@ -49,7 +49,12 @@ public class Artista {
 		this.biografia = biografia;
 	}
 	
-	
+	@Override
+	public String toString(){
+		return "Artista = {id: "+getIdArtista()+", nome:"+getNomeArtista()+", " +
+				"data_nascimento: "+getDataNascimento().toString()+", genero: "+getIdGenero()+", " +
+						"url_foto: "+getUrlFoto()+", biografia: "+getBiografia()+"}";
+	}
 	
 	
 }

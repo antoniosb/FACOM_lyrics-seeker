@@ -192,5 +192,12 @@ public class ArtistaDAO {
 		}
 		return result;
 	}
+
+	public Artista getOneNameLike(String termoBusca) {
+		Artista result = null;
+		if(getSome(termoBusca).size() > 0)
+			result = getSome(termoBusca).get(0); 
+		return result;
+	}
 	
 }
